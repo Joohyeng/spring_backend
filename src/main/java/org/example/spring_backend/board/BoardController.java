@@ -32,4 +32,11 @@ public class BoardController {
         return ResponseEntity.ok(dto);
     }
 
+    @GetMapping("/read/{idx}")
+    public ResponseEntity read(@PathVariable Long idx){
+        BoardDto.BoardResDto dto = boardService.read(idx);
+
+        return ResponseEntity.ok(dto);
+    }
+
 }
