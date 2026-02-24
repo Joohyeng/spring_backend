@@ -6,6 +6,8 @@ import org.example.spring_backend.board.model.BoardDto;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/board")
 @RequiredArgsConstructor
@@ -21,6 +23,13 @@ public class BoardController {
         boardService.register(dto);
 
         return ResponseEntity.ok("성공");
+    }
+
+    @PostMapping("/list")
+    public ResponseEntity list(){
+        List<BoardDto.BoardResDto> dto = boardService.list();
+
+        return ResponseEntity.ok(dto);
     }
 
 }
