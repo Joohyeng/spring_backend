@@ -1,6 +1,6 @@
 spring:
   application:
-    name: spring_backend
+    name: demo
   datasource:
     driver-class-name: org.mariadb.jdbc.Driver
     url: "jdbc:mariadb://10.10.10.11:3306/test"
@@ -17,13 +17,5 @@ spring:
 
 logging:
   level:
-    org:
-      springframework:
-        security:
-          web:
-            FilterChainProxy: debug
-        web:
-          servlet:
-            DispatcherServlet: debug
     org.hibernate.SQL: debug
     org.hibernate.orm.jdbc.bind: trace
